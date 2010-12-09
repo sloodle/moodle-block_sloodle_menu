@@ -1,0 +1,82 @@
+<?php
+    //require_once($CFG->dirroot .'/blocks/sloodle_menu/block_sloodle_menu.php');
+?>
+
+<!-- The form tags are provided by Moodle. Just create the invidivual input elements. -->
+
+<table cellpadding="9" cellspacing="0">
+
+<tr>
+ <td>
+  <h2><?php echo get_string('sloodlemenuversion', 'block_sloodle_menu').': '.(string)SLOODLE_MENU_VERSION; ?></h2>
+ </td>
+</tr>
+
+<?php
+    // These variables will determine if the individual items are shown
+    $show_myprofile = true;
+    $show_distributor = true;
+    $show_loginzone = true;
+    $show_usermanagement = true;
+    $show_sloodleconfig = true;
+    $show_notecardsetup = true;
+    // If an item has not been set, then default to true
+    if (isset($CFG->block_sloodle_menu_show_myprofile))         $show_myprofile = (bool)$CFG->block_sloodle_menu_show_myprofile;
+    if (isset($CFG->block_sloodle_menu_show_distributor))       $show_distributor = (bool)$CFG->block_sloodle_menu_show_distributor;
+    if (isset($CFG->block_sloodle_menu_show_loginzone))         $show_loginzone = (bool)$CFG->block_sloodle_menu_show_loginzone;
+    if (isset($CFG->block_sloodle_menu_show_usermanagement))    $show_usermanagement = (bool)$CFG->block_sloodle_menu_show_usermanagement;
+    if (isset($CFG->block_sloodle_menu_show_sloodleconfig))     $show_sloodleconfig = (bool)$CFG->block_sloodle_menu_show_sloodleconfig;
+    if (isset($CFG->block_sloodle_menu_show_notecardsetup))     $show_notecardsetup = (bool)$CFG->block_sloodle_menu_show_notecardsetup;
+?>
+
+<tr valign="top">
+ <td align="left">
+  <h3><?php echo get_string('showhideitems','block_sloodle_menu').helpbutton('show_hide_menu_items', get_string('showhideitems:help','block_sloodle_menu'), 'block_sloodle_menu', true, false, '', true); ?></h3>
+  <p><?php print_string('showhideitems:info','block_sloodle_menu'); ?></p>
+   
+   <table border="1" style="border-collapse:collapse;">
+    <tr><td><?php print_string('show','block_sloodle_menu'); ?></td><td><?php print_string('hide','block_sloodle_menu'); ?></td><td> </td></tr>
+    
+    <tr>
+     <td align="center"><input type="radio" value="1" name="block_sloodle_menu_show_myprofile" <?php if ($show_myprofile) echo 'checked'; ?> /></td>
+     <td align="center"><input type="radio" value="0" name="block_sloodle_menu_show_myprofile" <?php if (!$show_myprofile) echo 'checked'; ?> /></td>
+     <td align="left"><?php print_string('mysloodleprofile','block_sloodle_menu'); ?></td>
+    </tr>
+    
+    <tr>
+     <td align="center"><input type="radio" value="1" name="block_sloodle_menu_show_distributor" <?php if ($show_distributor) echo 'checked'; ?> /></td>
+     <td align="center"><input type="radio" value="0" name="block_sloodle_menu_show_distributor" <?php if (!$show_distributor) echo 'checked'; ?> /></td>
+     <td align="left"><?php print_string('objectdistributor','block_sloodle_menu'); ?></td>
+    </tr>
+    
+    <tr>
+     <td align="center"><input type="radio" value="1" name="block_sloodle_menu_show_loginzone" <?php if ($show_loginzone) echo 'checked'; ?> /></td>
+     <td align="center"><input type="radio" value="0" name="block_sloodle_menu_show_loginzone" <?php if (!$show_loginzone) echo 'checked'; ?> /></td>
+     <td align="left"><?php print_string('loginzone','block_sloodle_menu'); ?></td>
+    </tr>
+    
+    <tr>
+     <td align="center"><input type="radio" value="1" name="block_sloodle_menu_show_usermanagement" <?php if ($show_usermanagement) echo 'checked'; ?> /></td>
+     <td align="center"><input type="radio" value="0" name="block_sloodle_menu_show_usermanagement" <?php if (!$show_usermanagement) echo 'checked'; ?> /></td>
+     <td align="left"><?php print_string('usermanagement','block_sloodle_menu'); ?></td>
+    </tr>
+    
+    <tr>
+     <td align="center"><input type="radio" value="1" name="block_sloodle_menu_show_sloodleconfig" <?php if ($show_sloodleconfig) echo 'checked'; ?> /></td>
+     <td align="center"><input type="radio" value="0" name="block_sloodle_menu_show_sloodleconfig" <?php if (!$show_sloodleconfig) echo 'checked'; ?> /></td>
+     <td align="left"><?php print_string('sloodleconfig','block_sloodle_menu'); ?></td>
+    </tr>
+    
+    <tr>
+     <td align="center"><input type="radio" value="1" name="block_sloodle_menu_show_notecardsetup" <?php if ($show_notecardsetup) echo 'checked'; ?> /></td>
+     <td align="center"><input type="radio" value="0" name="block_sloodle_menu_show_notecardsetup" <?php if (!$show_notecardsetup) echo 'checked'; ?> /></td>
+     <td align="left"><?php print_string('notecardsetuppage','block_sloodle_menu'); ?></td>
+    </tr>
+   </table>   
+   
+ </td>
+</tr>
+
+<tr><td><input type="submit" value="<?php print_string('savesettings','block_sloodle_menu'); ?>" /></td></tr>
+
+</table>
