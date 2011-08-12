@@ -112,9 +112,9 @@ class block_sloodle_menu extends block_base {
         
         // Attempt to find a Sloodle user for the Moodle user
         $dbquery = "    SELECT * FROM {$CFG->prefix}sloodle_users
-                        WHERE userid = {$USER->id} AND NOT (avname = '' AND uuid = '')
+                        WHERE userid = ? AND NOT (avname = '' AND uuid = '')
                     ";
-        $dbresult = sloodle_get_records_sql($dbquery);
+        $dbresult = sloodle_get_records_sql_params($dbquery, array($USER->id));
         $sl_avatar_name = "";
         if (!is_array($dbresult) || count($dbresult) == 0) $userresult = FALSE;
         else if (count($dbresult) > 1) $userresult = "Multiple avatars associated with your Moodle account.";
