@@ -80,7 +80,7 @@ class block_sloodle_menu extends block_base {
         }
         
         // If the user is not logged in or if they are using guest access, then we can't show anything
-        if (!isloggedin() || isguest()) {
+        if (!isloggedin() || isguestuser()) {
             return $this->content;
         }
         
