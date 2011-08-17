@@ -6,6 +6,7 @@
 $string['avatars'] = 'Avatars';
 $string['avatarname'] = 'Avatar name';
 
+$string['pluginname'] = 'SLOODLE Menu';
 $string['blockname'] = 'SLOODLE Menu';
 $string['blocknameplural'] = 'SLOODLE Menus';
 

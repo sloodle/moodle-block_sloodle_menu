@@ -177,7 +177,7 @@ class block_sloodle_menu extends block_base {
         // Add a link to Sloodle logs, if the user can update the course
         if (has_capability('moodle/course:update', $course_context)) {
             $this->content->text .= "<img src=\"{$CFG->wwwroot}/blocks/sloodle_menu/img/notes.gif\" width=\"16\" height=\"16\"/> ";
-            $this->content->text .= "<a href=\"{$CFG->wwwroot}/mod/sloodle/view.php?_type=logs&id={$COURSE->id}\">".get_string('logs:view', 'sloodle')."</a><br>\n";
+            //$this->content->text .= "<a href=\"{$CFG->wwwroot}/mod/sloodle/view.php?_type=logs&id={$COURSE->id}\">".get_string('logs:view', 'sloodle')."</a><br>\n";
         }
         // Add a link to Sloodle Backpack
         
